@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>علاجك طبيعي | الرعاية الصحية الذكية</title>
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* نفس الكود السابق بدون تغيير */
+        :root {
+            --primary: #2A5D82;
+            --secondary: #5DA399;
+            --accent: #FF7E67;
+            --dark: #1A2E40;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'El Messiri', sans-serif;
+        }
+
+        body {
+            background: #f8f9fa;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0 2rem;
+            margin-top: 80px;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .services-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .booking-section {
+            padding: 5rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .booking-form {
+            max-width: 700px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(42, 93, 130, 0.2);
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+            width: 100%;
+        }
+
+        .contact-section {
+            padding: 5rem 2rem;
+            background: var(--dark);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            background: #25D366;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#" class="logo">علاجك طبيعي</a>
+            <div class="nav-links">
+                <a href="#home">الرئيسية</a>
+                <a href="#services">الخدمات</a>
+                <a href="#booking">الحجز</a>
+                <a href="#contact">التواصل</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>رعاية صحية متميزة في منزلك</h1>
+            <p>جلسات علاج طبيعي متخصصة + استشارات تغذية أونلاين</p>
+        </div>
+    </section>
+
+    <!-- قسم الخدمات المضافة -->
+    <section class="services-section" id="services">
+        <h2 style="text-align: center; margin-bottom: 2rem;">خدماتنا المتخصصة</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-home fa-3x" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                <h3>الجلسات المنزلية</h3>
+                <ul style="list-style: none; padding: 0; text-align: right;">
+                    <li>• علاج آلام الظهر والرقبة</li>
+                    <li>• تأهيل ما بعد الجراحة</li>
+                    <li>• علاج إصابات الرياضيين</li>
+                    <li>• تأهيل كبار السن</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-utensils fa-3x" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                <h3>استشارات التغذية</h3>
+                <ul style="list-style: none; padding: 0; text-align: right;">
+                    <li>• برامج إنقاص/زيادة الوزن</li>
+                    <li>• حساسيات الطعام</li>
+                    <li>• تغذية مرضى السكري</li>
+                    <li>• برامج التغذية الرياضية</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- نموذج الحجز الكامل -->
+    <section class="booking-section" id="booking">
+        <div class="booking-form">
+            <h2 style="text-align: center; margin-bottom: 2rem;">احجز موعدك الآن</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="الاسم بالكامل" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" name="age" placeholder="العمر" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="رقم الهاتف" required>
+                </div>
+                <div class="form-group">
+                    <select name="governorate" required>
+                        <option value="">اختر المحافظة</option>
+                        <option value="القاهرة">القاهرة</option>
+                        <option value="الغردقة">الغردقة</option>
+                        <option value="الأقصر">الأقصر</option>
+                        <option value="بني سويف">بني سويف</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select name="service" required>
+                        <option value="">نوع الخدمة</option>
+                        <option value="جلسات منزلية">جلسات علاج طبيعي منزلية</option>
+                        <option value="تغذية أونلاين">استشارات تغذية أونلاين</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="date" name="date" required>
+                </div>
+                <button type="submit" class="submit-btn">تأكيد الحجز الآن</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <h2 style="margin-bottom: 3rem;">تواصل معنا على مدار الساعة</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <i class="fas fa-phone fa-2x"></i>
+                <p style="margin: 1rem 0;">
+                    <a href="tel:01022562927" style="color: white; text-decoration: none;">
+                        01022562927
+                    </a>
+                </p>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-envelope fa-2x"></i>
+                <p style="margin: 1rem 0;">Elagak_Tbe3y@yahoo.com</p>
+            </div>
+            <div class="contact-card">
+                <a href="https://www.facebook.com/share/14vLw3V9JY/" 
+                   target="_blank" 
+                   style="color: white; text-decoration: none;">
+                    <i class="fab fa-facebook fa-2x"></i>
+                    <p style="margin-top: 1rem;">صفحة الفيسبوك</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/201022562927" 
+       class="whatsapp-btn"
+       target="_blank">
+        <i class="fab fa-whatsapp fa-2x"></i>
+        تواصل عبر واتساب
+    </a>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const message = 
+            `حجز جديد:
+الاسم: ${formData.get('name')}
+العمر: ${formData.get('age')}
+الهاتف: ${formData.get('phone')}
+المحافظة: ${formData.get('governorate')}
+الخدمة: ${formData.get('service')}
+التاريخ: ${formData.get('date')}`;
+
+            window.open(`https://wa.me/201022562927?text=${encodeURIComponent(message)}`, '_blank');
+            alert('تم إرسال الحجز بنجاح! سيتم التواصل معك خلال ساعة');
+            this.reset();
+        });
+
+        window.addEventListener('scroll', function() {
+            const elements = document.querySelectorAll('.service-card, .contact-card');
+            elements.forEach(el => {
+                const position = el.getBoundingClientRect();
+                if(position.top < window.innerHeight * 0.8) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
